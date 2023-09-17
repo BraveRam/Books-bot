@@ -15,14 +15,11 @@ DISCLAIMER_MSG = """
 """
 
 HELP_MSG = """
-<i>You can use this bot in two ways:</i>
+<i>You can use this bot:</i>
 	
-	1. By sending book\'s name, the bot will provide a books available for a given term.
+	By sending book\'s name, the bot will provide a books available for a given term.
 	    You can then download the book you want🎉
 	
-	2. By using Inline mode, the bot will show a books available for a given term on inline mode and you then choose the book you want to download and download it easily🎉
-	   <code>@{} Typescript</code>
-	   
 <i>✨Thanks for using our bot🤖</i>
 """
 
@@ -30,4 +27,4 @@ SUB_MSG = """
 {}, You have to Join this bot\'s developers before downloading books:)
 
 <b>🎉Join using this link:- @MT_Projectz and If you are a programmer join @programming_Tipz(Optional)</b>
-""" 
+"""
