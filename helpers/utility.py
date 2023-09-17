@@ -3,7 +3,7 @@ WELCOME_MSG = """
 
 This bot helps you download so many books for free.
 
-You can send me book\'s or Search it using Inline mode🎉
+You can send me a book\'s name or Search it using Inline mode🎉
 """
 
 DISCLAIMER_MSG = """
