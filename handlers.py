@@ -25,6 +25,13 @@ BOOK_TEXT_TEMPLATE = '''👨‍🏫Author: <i>{author}</i>\n
 💡Year: <i>{year}</i>
 '''
 
+BOOK_TEXT_TEMPLATE_I = '''👨‍🏫Author: {author}\n
+📝Title: {title}\n
+📹Size: {size}\n
+🔍Type: {file}\n
+💡Year: {year}
+'''
+
 users = {}
 
 def send_request(url, url_params=None):
@@ -169,11 +176,37 @@ def search_book(name):
         return []
     books = get_books(response)
     return books
+    
+@bot.inline_handler(lambda query: True)
+def handle_inline_query(query):
+    books = search_book(str(query.query))
+    try:        
+        results = []
+        for id, data in enumerate(books):
+        	button_data = f'link_{data["link"].split("/")[-1]}&file={data["file"]}'
+        	keyboard = InlineKeyboardMarkup(row_width=1)
+        	keyboard.add(InlineKeyboardButton("✨My Updates✨", "t.me/mt_projectz"))
+        	text = "Search result:\n\n"
+        	text+=BOOK_TEXT_TEMPLATE_I.format(**data)
+        	results.append(
+               InlineQueryResultArticle(
+                id=id,
+                title=data["title"],
+                thumbnail_url="https://t.me/Oro_Tech_Tips/892",
+                reply_markup=keyboard,
+                description=f"Size: {data['size']} || Author: {data['author']} || Year: {data['year']}",
+                input_message_content=types.InputTextMessageContent(message_text=text),
+         )
+        )        
+        bot.answer_inline_query(query.id, results)
 
+    except Exception as e:
+        pass
+    
 def search_book_handler(message):
     msg = bot.reply_to(message, "<i>Looking for this book...🔍</i>")
     text = message.text
-    books = search_book(text)
+    books = search_book(text)    
     if not books:
         bot.send_message(message.chat.id, "An error occurred: Book not found.")
         return 1    
@@ -221,6 +254,8 @@ def getStats(message):
 def handle_message(message):
 	if bot.get_chat_member("@mt_projectz", message.from_user.id).status == "left":
 		return bot.send_message(message.chat.id, utility.SUB_MSG.format(message.from_user.first_name))
+	if "Search result:" in message.text:
+		return 
 	user_id = message.from_user.id
 	accepted = DB().check_accept(int(message.from_user.id))
 	if accepted:		
@@ -280,6 +315,7 @@ def ans_l(callback):
 
 @bot.callback_query_handler(func = lambda callback: callback.data.startswith("cancel"))
 def ans_c(callback):
+	bot.answer_callback_query(callback.id, "lol")
 	state = bot.get_state(callback.from_user.id, callback.message.chat.id)
 	if state:
 		bot.delete_state(callback.from_user.id, callback.message.chat.id)
@@ -296,7 +332,5 @@ def ans(callback):
 		bot.edit_message_text(utility.HELP_MSG.format(bot.get_me().username), chat_id=callback.message.chat.id, message_id=callback.message.message_id, reply_markup=buttons.back_btn())	
 	if callback.data == "back":
 		bot.edit_message_text(utility.WELCOME_MSG.format(callback.from_user.first_name, bot.get_me().first_name), chat_id=callback.message.chat.id, message_id=callback.message.message_id, reply_markup=buttons.welcome_btns())
-	if callback.data == "tos":
-		bot.edit_message_text(utility.DISCLAIMER_MSG, chat_id=callback.message.chat.id, message_id=callback.message.message_id, reply_markup=buttons.back_btn())	
 		
 bot.add_custom_filter(custom_filters.StateFilter(bot))
