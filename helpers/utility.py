@@ -3,13 +3,13 @@ WELCOME_MSG = """
 
 This bot helps you download so many books for free.
 
-You can send me book\'s or Search it using Inline mode🎉
+You can send me a book\'s or Search it using Inline mode🎉
 """
 
 DISCLAIMER_MSG = """
 <i>⚠️You have to accept the terms of service of this bot before continuing⚠️</i>
 
-<b>The content available in this book is not the developer\'s' of this bot, so If you want to remove your content from this bot, contact @BetterParrot and your contents will be removed.</b>
+<b>The content available in this bot is not the developer\'s' of this bot, so If you want to remove your content from this bot, contact @BetterParrot and your contents will be removed.</b>
 
 <u>By clicking 'Accept terms of service' button, You accept the terms of service of this bot🤖</u>
 """
