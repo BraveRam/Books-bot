@@ -2,8 +2,8 @@ from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def welcome_btns():
 	keyboard = InlineKeyboardMarkup()
-	keyboard.add(InlineKeyboardButton("✨My Channel✨", url="t.me/mt_projectz"),InlineKeyboardButton("♻️Get Help♻️", callback_data="help"))
-	keyboard.add(InlineKeyboardButton("👥Support Group👥", url="t.me/mt_projectzchat"))
+	keyboard.add(InlineKeyboardButton("✨My Channel✨", url="t.me/mt_projectz"), InlineKeyboardButton("👥Support Group👥", url="t.me/mt_projectzchat"))
+	keyboard.add(InlineKeyboardButton("🔍Find Books🔍", switch_inline_query_current_chat="JavaScript"), InlineKeyboardButton("♻️Get Help♻️", callback_data="help"))
 	keyboard.add(InlineKeyboardButton("✍️Terms of service✍️", callback_data="tos"))
 	return keyboard
 	
