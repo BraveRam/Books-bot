@@ -333,7 +333,6 @@ def ans(callback):
 	if callback.data == "back":
 		bot.edit_message_text(utility.WELCOME_MSG.format(callback.from_user.first_name, bot.get_me().first_name), chat_id=callback.message.chat.id, message_id=callback.message.message_id, reply_markup=buttons.welcome_btns())
 	if callback.data == "tos":
-		if callback.data == "help":
 		bot.edit_message_text(utility.DISCLAIMER_MSG, chat_id=callback.message.chat.id, message_id=callback.message.message_id, reply_markup=buttons.back_btn())	
 		
 bot.add_custom_filter(custom_filters.StateFilter(bot))
