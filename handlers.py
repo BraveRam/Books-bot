@@ -315,7 +315,7 @@ def ans_l(callback):
 
 @bot.callback_query_handler(func = lambda callback: callback.data.startswith("cancel"))
 def ans_c(callback):
-	bot.answer_callback_query(callback.id, "lol")
+	#bot.answer_callback_query(callback.id, "lol")
 	state = bot.get_state(callback.from_user.id, callback.message.chat.id)
 	if state:
 		bot.delete_state(callback.from_user.id, callback.message.chat.id)
