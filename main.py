@@ -1,0 +1,6 @@
+from handlers import bot
+
+if __name__ == "__main__":
+    print("Successful")
+    bot.infinity_polling()
+ 
