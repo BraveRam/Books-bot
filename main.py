@@ -1,11 +1,11 @@
 from handlers import bot
-from flask import Flask, request
+#from flask import Flask, request
 import telebot
 import helpers.config as config 
 import os
 
 TOKEN = config.BOT_TOKEN
-server = Flask(__name__)
+"""server = Flask(__name__)
 
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
@@ -23,7 +23,7 @@ def webhook():
 
 if __name__ == "__main__":
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
-
-#if __name__ == "__main__":
-#    print("Successful")
-#    bot.infinity_polling()
+"""
+if __name__ == "__main__":
+    print("Successful")
+    bot.infinity_polling()
