@@ -17,7 +17,7 @@ DISCLAIMER_MSG = """
 HELP_MSG = """
 <i>You can use this bot in two ways:</i>
 	
-	1. By sending book\'s name, the bot will provide a books available for a given term.
+	1. By sending a book\'s name, the bot will provide a books available for a given term.
 	    You can then download the book you want🎉
 	
 	2. By using Inline mode, the bot will show a books available for a given term on inline mode and you then choose the book you want to Search || Search method🎉
