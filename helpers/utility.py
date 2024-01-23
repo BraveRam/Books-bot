@@ -9,7 +9,7 @@ You can send me a book\'s name or Search it using Inline mode🎉
 DISCLAIMER_MSG = """
 <i>⚠️You have to accept the terms of service of this bot before continuing⚠️</i>
 
-<b>The content available in this book is not the developer\'s' of this bot, so If you want to remove your content from this bot, contact @BetterParrot and your contents will be removed.</b>
+<b>The content available in this bot is not owned by the developer of this bot, so If you want to remove your content from this bot, contact @BetterParrot and your contents will be removed.</b>
 
 <u>By clicking 'Accept terms of service' button, You accept the terms of service of this bot🤖</u>
 """
@@ -24,10 +24,10 @@ HELP_MSG = """
 	   <code>@{} Typescript</code>
 	   
 <i>✨Thanks for using our bot🤖</i>
-"""
+\n<i>@MT_Projectz</i>"""
 
 SUB_MSG = """
-{}, You have to Join this bot\'s developer before downloading books:)
+{}, You have to Join this bot\'s developer channel before downloading books:)
 
 <b>🎉Join using this link:- @MT_Projectz and If you are a programmer join @programming_Tipz(Optional)</b>
 """
