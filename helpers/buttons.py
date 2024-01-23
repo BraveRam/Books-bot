@@ -14,5 +14,5 @@ def tos_btn():
 
 def back_btn():
 	keyboard = InlineKeyboardMarkup()
-	keyboard.add(InlineKeyboardButton("🔙Back", callback_data="back"))
+	keyboard.add(InlineKeyboardButton("🔙Go back", callback_data="back"))
 	return keyboard
