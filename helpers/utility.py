@@ -7,7 +7,7 @@ You can send me a book\'s name or Search it using Inline mode🎉
 """
 
 DISCLAIMER_MSG = """
-<i>⚠️You have to accept the terms of service of this bot before continuing⚠️</i>
+<i>⚠️You have to accept the terms of service of this bot before proceeding⚠️</i>
 
 <b>The content available in this bot is not owned by the developer of this bot, so If you want to remove your content from this bot, contact @BetterParrot and your contents will be removed.</b>
 

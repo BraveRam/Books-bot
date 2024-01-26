@@ -82,9 +82,11 @@ def download_book(url, file_name, chat_id, message_id, query=None):
                         try:
                             bot.edit_message_text("<b>💡Downloaded: {:.2f}%📝</b>".format(percent), chat_id=chat_id, message_id=message_id)                          
                         except Exception as e:
+                            users[chat_id]["queue"] = False
                             bot.send_message(chat_id, "An error occurred:(")
                     prev = tmp      
     except requests.exceptions.RequestException as e:
+        users[chat_id]["queue"] = False
         bot.edit_message_text("Unable to download...", chat_id=chat_id, message_id=message_id)
 
 def get_books(html):
@@ -155,6 +157,7 @@ def send_file(callback):
         except Exception as e:
             print("Error file:", e)
     else:
+        users[callback.message.chat.id]["queue"] == False
         bot.send_message(callback.message.chat.id, "An error occurred:(")
 
     return 1
@@ -192,7 +195,7 @@ def handle_inline_query(query):
                InlineQueryResultArticle(
                 id=id,
                 title=data["title"],
-                thumbnail_url="https://t.me/Oro_Tech_Tips/892",
+                thumbnail_url="https://t.me/Oro_Tech_Tipz/892",
                 reply_markup=keyboard,
                 description=f"Size: {data['size']} || Author: {data['author']} || Year: {data['year']}",
                 input_message_content=types.InputTextMessageContent(message_text=text),
