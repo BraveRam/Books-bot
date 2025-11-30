@@ -2,17 +2,16 @@ from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def welcome_btns():
 	keyboard = InlineKeyboardMarkup()
-	keyboard.add(InlineKeyboardButton("✨My Channel✨", url="t.me/mt_projectz"), InlineKeyboardButton("👥Support Group👥", url="t.me/mt_projectzchat"))
-	keyboard.add(InlineKeyboardButton("🔍Find Books🔍", switch_inline_query_current_chat="JavaScript"), InlineKeyboardButton("♻️Get Help♻️", callback_data="help"))
-	keyboard.add(InlineKeyboardButton("✍️Terms of service✍️", callback_data="tos"))
+	keyboard.add(InlineKeyboardButton("Find Books 🔍", switch_inline_query_current_chat="JavaScript"))
+	keyboard.add(InlineKeyboardButton("See Help ♻️", callback_data="help"))
 	return keyboard
 	
 def tos_btn():
 	keyboard = InlineKeyboardMarkup()
-	keyboard.add(InlineKeyboardButton("✨Continue✨", callback_data="continue"))	
+	keyboard.add(InlineKeyboardButton("Continue ✨", callback_data="continue"))	
 	return keyboard
 
 def back_btn():
 	keyboard = InlineKeyboardMarkup()
-	keyboard.add(InlineKeyboardButton("🔙Go back", callback_data="back"))
+	keyboard.add(InlineKeyboardButton("Go back 🔙", callback_data="back"))
 	return keyboard

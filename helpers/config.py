@@ -1,3 +1,8 @@
-BOT_TOKEN = "6459660214:AAGzDzoI8UlkVW7bHl62ZC5v1X78BRb6F7g"
-MONGO_DB_URL = "mongodb+srv://really651:gSPMW6u9WuStXIwD@cluster0.pxc2foz.mongodb.net/?retryWrites=true&w=majority"
-ADMINS_ID = [1365625365] 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+MONGO_DB_URL = os.getenv("MONGO_DB_URL")
+ADMINS_ID = [int(admin_id) for admin_id in os.getenv("ADMINS_ID", "").split(",") if admin_id.strip()] 
