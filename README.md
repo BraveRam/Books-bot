@@ -1,4 +1,4 @@
-# Books Bot
+# Books Downloading Bot
 
 A Telegram bot that helps users search and download books for free using dBooks.org. The bot supports both direct messaging and inline mode for seamless book discovery.
 
